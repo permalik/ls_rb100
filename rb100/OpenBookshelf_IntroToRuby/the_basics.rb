@@ -7,7 +7,6 @@ puts "Ty" "Malik"
 =end
 
 =begin
-=end
 # Use the modulo operator, division or
 # a combination of both to take a 4 digit number
 # and find the digit in the:
@@ -37,3 +36,43 @@ Ones Place: #{ones_conversion}
 end
 
 four_digit_places
+=end
+
+=begin
+=end
+# Write a program that uses a hash to
+# store a list of movie titles with the
+# year they came out. Then use the
+# puts command to make your program
+# print out the year of each movie to the screen.
+
+def movie_year_printer
+
+  quit_token = false
+  user_hash = {}
+
+  while quit_token == false
+
+    $stdout.sync = true
+    puts "Input movie title:"
+    title = gets.chomp.to_sym
+
+    puts "In what year was it made?"
+    year = gets.chomp
+
+    user_hash.store(title, year)
+
+    puts "Add another movie? (y/n)"
+    continue_decision = gets.chomp
+
+    if continue_decision == "n"
+      quit_token = true
+
+      user_hash.each { |key, val| puts val }
+    end
+
+  end
+
+end
+
+movie_year_printer
